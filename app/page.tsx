@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -92,13 +91,9 @@ export default function Home() {
           <div className="bg-gradient-to-r from-purple-600 to-blue-500 rounded-full mb-6 overflow-hidden">
             <div className="flex items-center px-6 py-2">
               <div className="flex items-center">
-                <Image
-                  src="/images/echo-mascot.png"
-                  alt="Echo Mascot"
-                  width={40}
-                  height={40}
-                  className="rounded-full mr-3"
-                />
+                <div className="rounded-full mr-3 bg-purple-700 w-10 h-10 flex items-center justify-center">
+                  <Music className="h-6 w-6 text-white" />
+                </div>
                 <h1 className="text-white text-xl font-bold">BILINGUAL BEATS</h1>
               </div>
               <div className="ml-auto flex items-center">
@@ -216,13 +211,13 @@ export default function Home() {
               </div>
 
               <div className="mb-6 relative">
-                <Image
-                  src="/images/language-acquisition-pack.png"
-                  alt="Language Acquisition Pack"
-                  width={600}
-                  height={350}
-                  className="rounded-lg w-full"
-                />
+                <div className="rounded-lg w-full h-[350px] bg-gradient-to-r from-purple-900 to-blue-900 flex items-center justify-center">
+                  <div className="text-center">
+                    <Music className="h-16 w-16 text-white mx-auto mb-4" />
+                    <h3 className="text-2xl font-bold text-white">Language Acquisition Pack</h3>
+                    <p className="text-gray-300 mt-2">144 custom bilingual tracks</p>
+                  </div>
+                </div>
                 <div className="absolute top-4 right-4 bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-bold">
                   144 Tracks
                 </div>
@@ -298,13 +293,9 @@ export default function Home() {
               {/* Echo Introduction */}
               <div className="bg-black bg-opacity-80 rounded-lg p-6 text-white">
                 <div className="flex items-center mb-3">
-                  <Image
-                    src="/images/echo-mascot.png"
-                    alt="Echo Mascot"
-                    width={50}
-                    height={50}
-                    className="rounded-full mr-3"
-                  />
+                  <div className="rounded-full mr-3 bg-purple-700 w-12 h-12 flex items-center justify-center">
+                    <Music className="h-6 w-6 text-white" />
+                  </div>
                   <h3 className="text-xl font-bold">Meet Echo!</h3>
                 </div>
                 <p className="text-sm mb-4">
