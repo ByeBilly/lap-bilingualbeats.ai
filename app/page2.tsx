@@ -20,7 +20,7 @@ type CartItem = {
 }
 
 export default function Home() {
-  // Shopping cart state
+// Shopping cart state
   const [cart, setCart] = useState<CartItem[]>([])
   const [isCheckingOut, setIsCheckingOut] = useState(false)
 
@@ -135,7 +135,9 @@ export default function Home() {
       toast({ title: "Error", description: "Something went wrong." });
     }
   };
+  }
 
+return (
     <div className="min-h-screen bg-cover bg-center" style={{ backgroundImage: "url('/images/sky-background.png')" }}>
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-5xl mx-auto">
@@ -459,6 +461,6 @@ export default function Home() {
         </div>
       </div>
     </div>
-  );
+  )
 }
-O
+}

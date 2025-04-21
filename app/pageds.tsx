@@ -1,5 +1,3 @@
-"use client"
-
 import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
@@ -9,7 +7,6 @@ import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/co
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
 import { toast } from "@/hooks/use-toast"
-const [joinEmail, setJoinEmail] = useState("");
 
 // Define cart item type
 type CartItem = {
@@ -20,6 +17,7 @@ type CartItem = {
 }
 
 export default function Home() {
+  const [joinEmail, setJoinEmail] = useState("");
   // Shopping cart state
   const [cart, setCart] = useState<CartItem[]>([])
   const [isCheckingOut, setIsCheckingOut] = useState(false)
@@ -105,7 +103,8 @@ export default function Home() {
     } finally {
       setIsCheckingOut(false)
     }
-    }
+  }
+
   const handleJoin = async () => {
     if (!joinEmail.includes("@")) {
       toast({
@@ -117,9 +116,9 @@ export default function Home() {
 
     try {
       const res = await fetch("/api/join", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email: joinEmail }),
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: joinEmail }),
       });
 
       const data = await res.json();
@@ -136,6 +135,7 @@ export default function Home() {
     }
   };
 
+  return (
     <div className="min-h-screen bg-cover bg-center" style={{ backgroundImage: "url('/images/sky-background.png')" }}>
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-5xl mx-auto">
@@ -440,12 +440,12 @@ export default function Home() {
                 </p>
                 <div className="flex space-x-2">
                   <Input
-                     type="email"
-                     placeholder="Enter your email address"
-                     className="bg-gray-800 border-gray-700 text-white"
-                     value={joinEmail}
-                     onChange={(e) => setJoinEmail(e.target.value)}
-                   />
+                    type="email"
+                    placeholder="Enter your email address"
+                    className="bg-gray-800 border-gray-700 text-white"
+                    value={joinEmail}
+                    onChange={(e) => setJoinEmail(e.target.value)}
+                  />
                   <Button 
                     className="bg-purple-600 hover:bg-purple-700"
                     onClick={handleJoin}
@@ -459,6 +459,5 @@ export default function Home() {
         </div>
       </div>
     </div>
-  );
+  )
 }
-O
